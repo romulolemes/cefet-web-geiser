@@ -1,4 +1,5 @@
 var express = require('express'),
+    fs = require('fs');
     app = express();
 
 // carregar "banco de dados" (data/jogadores.json e data/jogosPorJogador.json)
@@ -7,6 +8,9 @@ var express = require('express'),
 var db = {
 };
 
+var dbjogadores =
+
+app.set('view engine', 'hbs');
 
 // configurar qual templating engine usar. Sugestão: hbs (handlebars)
 //app.set('view engine', '???');
@@ -28,6 +32,17 @@ var db = {
 // EXERCÍCIO 1
 // configurar para servir os arquivos estáticos da pasta "client"
 // dica: 1 linha de código
-
 // abrir servidor na porta 3000
 // dica: 1-3 linhas de código
+
+// app.get('../client/', function (req, res) {
+//   res.send('Hello World!');
+// });
+
+app.use(express.static(__dirname + '/../client/'));
+app.set('views', 'server/views');
+app.get()
+
+var server = app.listen(3000, function () {
+
+});
